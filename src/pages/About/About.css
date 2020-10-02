@@ -4,21 +4,30 @@ body {
 
 .officerImages {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
   grid-column-gap: 1em;
   row-gap: 2em;
 }
-
-/* .officerImages img {
-  border-radius: 50%;
-} */
+.container {
+  background: #ffffff !important;
+}
 .test {
-  max-height: 86.6vh;
+  max-height: 90vh;
 }
 .about-us {
   padding: 2em;
 }
 
+.cnt {
+  display: flex;
+  justify-content: center;
+}
+.rowHeight {
+  min-height: 100vh;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .col > img {
   height: 40rem;
   width: auto;
@@ -42,14 +51,6 @@ body {
   }
 }
 
-/* @media only screen and (max-width: 1296px) {
-  .officerImages {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 5em;
-    row-gap: 2em;
-  }
-} */
 @media only screen and (max-width: 1109px) {
   .officerImages {
     display: grid;
