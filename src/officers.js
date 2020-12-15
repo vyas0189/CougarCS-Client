@@ -1,8 +1,8 @@
-import chantha from './assets/chantha.JPG';
-import ibrahim from './assets/ibes.JPG';
-import jerry from './assets/jerry.JPG';
-import mare from './assets/mariana.JPG';
-import vyas from './assets/vyas.JPG';
+import chantha from './assets/chantha.jpg';
+import ibrahim from './assets/ibes.jpg';
+import jerry from './assets/jerry.jpg';
+import mare from './assets/mariana.jpg';
+import vyas from './assets/vyas.jpg';
 import user from './assets/user.png';
 import dr_yun from './assets/dr_yun.jpg';
 

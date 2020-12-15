@@ -1,19 +1,34 @@
 import axios from 'axios';
-import moment from 'moment';
 import React, { useEffect, useState } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
+import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import Loading from '../../components/Loading/Loading';
 import './Event.css';
 import { Modal, Button } from 'react-bootstrap';
-import { sanitize } from 'dompurify';
+import purify from 'dompurify';
+import format from 'date-fns/format'
+import parse from 'date-fns/parse'
+import startOfWeek from 'date-fns/startOfWeek'
+import getDay from 'date-fns/getDay'
+import local from "date-fns/locale/en-US";
 
-const localizer = momentLocalizer(moment);
+const locales = {
+	'en-US': local,
+}
+
+const localizer = dateFnsLocalizer({
+	format,
+	parse,
+	startOfWeek,
+	getDay,
+	locales,
+})
 
 
 const url = 'https://backend.cougarcs.com/api/events';
 
 const addEvents = (eventType, events) => {
 	return eventType.map((event) => {
+
 		return events.push({
 			start: event.start.date,
 			end: event.end.date,
@@ -85,8 +100,8 @@ const Events = () => {
 							onSelectEvent={(e) => {
 								setDesc({
 									title: e.title,
-									startDate: e.start,
-									endDate: e.end,
+									startDate: format(new Date(e.start), 'EEEE, MMMM do yyyy, h:mm a'),
+									endDate: format(new Date(e.end), 'EEEE, MMMM do yyyy, h:mm a'),
 									description: e.desc,
 								});
 								setShow(true);
@@ -100,15 +115,15 @@ const Events = () => {
 					<Modal.Title>{desc.title}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					Date: {moment(desc.startDate).format('dddd, MMMM Do YYYY, h:mm a')} -{' '}
-					{moment(desc.endDate).format('h:mm a')}
+
+					From: {desc.startDate} <br /> To: {desc.endDate}
 					<br />
 					<hr />
 					Description:{' '}
 					{
 						<div
 							className='eventModalDesc'
-							dangerouslySetInnerHTML={{ __html: sanitize(desc.description) }}
+							dangerouslySetInnerHTML={{ __html: purify.sanitize(desc.description) }}
 						/>
 					}
 				</Modal.Body>

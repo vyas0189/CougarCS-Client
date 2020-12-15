@@ -53,7 +53,7 @@ export const Payment = () => {
 		setLoading(true);
 
 		// Get recaptcha token
-		const recaptcha = await load(process.env.REACT_APP_RECAPTCHA_SITE_KEY, {
+		const recaptcha = await load(import.meta.env.SNOWPACK_PUBLIC_RECAPTCHA_SITE_KEY, {
 			autoHideBadge: true,
 		});
 		const recaptchaToken = await recaptcha.execute('paymentpage');

@@ -5,7 +5,9 @@ import './UserRegister.css';
 
 import { Payment } from '../Payment/Payment';
 
-const PUBLIC_KEY = process.env.REACT_APP_STRIPE_KEY;
+const { SNOWPACK_PUBLIC_STRIPE_KEY: PUBLIC_KEY } = import.meta.env;
+
+
 const stripePromise = loadStripe(PUBLIC_KEY);
 const UserRegister = () => {
 	return (

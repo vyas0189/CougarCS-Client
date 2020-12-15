@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@snowpack/plugin-webpack": "^2.2.0",
     "@stripe/react-stripe-js": "^1.1.2",
-    "axios": "^0.21.0",
     "@stripe/stripe-js": "^1.11.0",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "date-fns": "^2.16.1",
     "dompurify": "^2.2.2",
     "formik": "^2.2.1",
-    "moment": "^2.29.1",
     "react": "^16.14.0",
     "react-add-to-calendar": "^0.1.5",
     "react-big-calendar": "^0.28.0",
@@ -28,11 +29,9 @@
     "typed.js": "^2.0.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "now-build": "react-scripts build"
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "now-build": "snowpack build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,5 +47,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@snowpack/app-scripts-react": "^1.12.6",
+    "@snowpack/plugin-dotenv": "^2.0.5",
+    "snowpack": "^3.0.0-rc.2",
+    "snowpack-plugin-relative-css-urls": "^1.1.1"
   }
 }
