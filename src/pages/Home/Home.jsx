@@ -15,7 +15,6 @@ const animateText = () =>
 		loop: true,
 	});
 
-// Class component so you can use `componentDidMount` lifecycle
 const Home = () => {
 	useEffect(() => {
 		animateText();
