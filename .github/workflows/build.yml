@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - snowpack
 jobs:
   install:
     runs-on: ubuntu-latest
