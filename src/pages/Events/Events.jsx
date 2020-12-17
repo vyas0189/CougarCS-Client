@@ -2,14 +2,16 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import Loading from '../../components/Loading/Loading';
-import './Event.css';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Dropdown } from 'react-bootstrap';
 import purify from 'dompurify';
 import format from 'date-fns/format'
 import parse from 'date-fns/parse'
 import startOfWeek from 'date-fns/startOfWeek'
 import getDay from 'date-fns/getDay'
 import local from "date-fns/locale/en-US";
+import AddToCalendar from '../../components/AddToCalendar/AddToCalendar';
+import './Event.css';
+
 
 const locales = {
 	'en-US': local,
@@ -23,8 +25,7 @@ const localizer = dateFnsLocalizer({
 	locales,
 })
 
-
-const url = 'https://backend.cougarcs.com/api/events';
+const URL = 'https://backend.cougarcs.com/api/events';
 
 const addEvents = (eventType, events) => {
 	return eventType.map((event) => {
@@ -37,6 +38,8 @@ const addEvents = (eventType, events) => {
 		});
 	});
 };
+
+
 
 const Events = () => {
 	const [events, setEvents] = useState([]);
@@ -60,9 +63,24 @@ const Events = () => {
 		description: '',
 	});
 
+	const formatDates = (date) => {
+		return format(new Date(date), 'EEEE, MMMM do yyyy, h:mm a')
+	}
+
+	const selectedEvent = (e) => {
+		console.log(e);
+		setDesc({
+			title: e.title,
+			startDate: e.start,
+			endDate: e.end,
+			description: e.desc,
+		});
+		setShow(true);
+	}
+
 	useEffect(() => {
 		axios
-			.get(url)
+			.get(URL)
 			.then((resp) => {
 				const events = [];
 				addEvents(resp.data.futureEvents, events);
@@ -97,15 +115,7 @@ const Events = () => {
 							popup={true}
 							drilldownView='agenda'
 							popupOffset={{ x: 30, y: 20 }}
-							onSelectEvent={(e) => {
-								setDesc({
-									title: e.title,
-									startDate: format(new Date(e.start), 'EEEE, MMMM do yyyy, h:mm a'),
-									endDate: format(new Date(e.end), 'EEEE, MMMM do yyyy, h:mm a'),
-									description: e.desc,
-								});
-								setShow(true);
-							}}
+							onSelectEvent={(e) => selectedEvent(e)}
 						/>
 					</div>
 				)}
@@ -116,7 +126,7 @@ const Events = () => {
 				</Modal.Header>
 				<Modal.Body>
 
-					From: {desc.startDate} <br /> To: {desc.endDate}
+					From: {desc.startDate ? formatDates(desc.startDate) : ''} <br /> To: {desc.endDate ? formatDates(desc.endDate) : ''}
 					<br />
 					<hr />
 					Description:{' '}
@@ -128,7 +138,16 @@ const Events = () => {
 					}
 				</Modal.Body>
 				<Modal.Footer>
-					<Button variant='secondary' onClick={handleClose}>
+
+					<Dropdown>
+						<Dropdown.Toggle variant="success" id="dropdown-basic">
+							Add To Calendar
+						  </Dropdown.Toggle>
+
+						<AddToCalendar event={desc} />
+					</Dropdown>
+
+					<Button variant='danger' onClick={handleClose}>
 						Close
 					</Button>
 				</Modal.Footer>
