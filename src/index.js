@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as Sentry from '@sentry/react';
+import { Integrations } from '@sentry/tracing';
 import App from './App';
 import './index.css';
 
-import * as Sentry from '@sentry/react';
-import { Integrations } from '@sentry/tracing';
-
 Sentry.init({
     dsn:
-        'https://945c88d938cb43d0bfd4d82ab010eaee@o527287.ingest.sentry.io/5734521',
+        'https://7f9f99f631f64df49f75aa5550dbc484@o578353.ingest.sentry.io/5734533',
     integrations: [new Integrations.BrowserTracing()],
 
     // Set tracesSampleRate to 1.0 to capture 100%
