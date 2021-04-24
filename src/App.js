@@ -40,6 +40,7 @@ const App = () => {
 	initializeReactGA();
 	return (
 		<QueryClientProvider client={queryClient}>
+			<button onClick={methodDoesNotExist}>Break the world</button>;
 			<Router>
 				<ScrollTop />
 				<NavBar />
