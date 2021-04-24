@@ -16,19 +16,7 @@ import Gallery from './pages/Gallery/Gallery';
 import GalleryEvent from './pages/Gallery/GalleryEvent';
 import ScrollTop from './components/ScrollTop/ScrollTop';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import * as Sentry from '@sentry/react';
-import { Integrations } from '@sentry/tracing';
 
-Sentry.init({
-	dsn:
-		'https://945c88d938cb43d0bfd4d82ab010eaee@o527287.ingest.sentry.io/5734521',
-	integrations: [new Integrations.BrowserTracing()],
-
-	// Set tracesSampleRate to 1.0 to capture 100%
-	// of transactions for performance monitoring.
-	// We recommend adjusting this value in production
-	tracesSampleRate: 1.0,
-});
 const queryClient = new QueryClient();
 
 function initializeReactGA() {
@@ -36,10 +24,15 @@ function initializeReactGA() {
 	ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
+const throwError = () => {
+	throw new Error('Test Error');
+};
+
 const App = () => {
 	initializeReactGA();
 	return (
 		<QueryClientProvider client={queryClient}>
+			<button onClick={throwError}>Test</button>
 			<Router>
 				<ScrollTop />
 				<NavBar />
@@ -64,4 +57,4 @@ const App = () => {
 		</QueryClientProvider>
 	);
 };
-export default Sentry.withProfiler(App);;
+export default App;
