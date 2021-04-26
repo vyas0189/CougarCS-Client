@@ -1,2 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Sitemap: https://cougarcs-client-git-sitemap-vyas0189.vercel.app/sitemap.xml
