@@ -5,11 +5,11 @@ import { Integrations } from '@sentry/tracing';
 import App from './App';
 import './index.css';
 
-Sentry.init({
-	dsn: process.env.REACT_APP_SENTRY_PUBLIC_URL,
-	integrations: [new Integrations.BrowserTracing()],
-	tracesSampleRate: 1.0,
-});
+// Sentry.init({
+// 	dsn: process.env.REACT_APP_SENTRY_PUBLIC_URL,
+// 	integrations: [new Integrations.BrowserTracing()],
+// 	tracesSampleRate: 1.0,
+// });
 
 const rootElement = document.getElementById('root');
 if (rootElement.hasChildNodes()) {
