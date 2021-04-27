@@ -16,10 +16,17 @@ import Gallery from './pages/Gallery/Gallery';
 import GalleryEvent from './pages/Gallery/GalleryEvent';
 import ScrollTop from './components/ScrollTop/ScrollTop';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import * as Sentry from '@sentry/react';
+import { Integrations } from '@sentry/tracing';
 
 const queryClient = new QueryClient();
 
 function initializeReactGA() {
+	Sentry.init({
+		dsn: process.env.REACT_APP_SENTRY_PUBLIC_URL,
+		integrations: [new Integrations.BrowserTracing()],
+		tracesSampleRate: 1.0,
+	});
 	ReactGA.initialize('UA-155177558-1');
 	ReactGA.pageview(window.location.pathname + window.location.search);
 }
