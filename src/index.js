@@ -5,15 +5,16 @@ import { Integrations } from '@sentry/tracing';
 import App from './App';
 import './index.css';
 
-const sentry = async () =>
-	(
-		await Sentry.init({
-			dsn: process.env.REACT_APP_SENTRY_PUBLIC_URL,
-			integrations: [new Integrations.BrowserTracing()],
-			tracesSampleRate: 1.0,
-		})
-	)();
+const sentry = async () => {
+	console.log('Sentry...');
+	return await Sentry.init({
+		dsn: process.env.REACT_APP_SENTRY_PUBLIC_URL,
+		integrations: [new Integrations.BrowserTracing()],
+		tracesSampleRate: 1.0,
+	});
+};
 
+sentry();
 const rootElement = document.getElementById('root');
 if (rootElement.hasChildNodes()) {
 	hydrate(<App />, rootElement);
