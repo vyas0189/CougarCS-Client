@@ -6,7 +6,7 @@ import App from './App';
 import './index.css';
 
 Sentry.init({
-	dsn: process.env.REACT_SENTRY_URL,
+	dsn: process.env.REACT_APP_SENTRY_PUBLIC_URL,
 	integrations: [new Integrations.BrowserTracing()],
 	tracesSampleRate: 1.0,
 });
