@@ -6,7 +6,8 @@ import './NotFound.css';
 const NotFound = () => (
 	<div>
 		<Helmet>
-			<title>Not Found</title>
+			<title>404</title>
+			<meta name='prerender-status-code' content='404'></meta>
 		</Helmet>
 		<div className='fourOfour'>
 			<h1>
