@@ -5,7 +5,7 @@ import { load } from 'recaptcha-v3';
 import CustomModal from '../Modals/CustomModal';
 import axios from 'axios';
 import check from '../../assets/check.png';
-import warn from '../../assets/warn.png';
+import warn from '../../assets/warn.webp';
 import { useForm } from 'react-hook-form';
 
 export const Payment = () => {

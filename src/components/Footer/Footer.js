@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.webp';
 
 import fb from '../../assets/icons/facebook-f.png';
 import ig from '../../assets/icons/instagram.png';

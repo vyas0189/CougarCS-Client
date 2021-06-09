@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.webp';
 import './Navbar.css';
 
 const NavBar = ({ themeToggler }) => (

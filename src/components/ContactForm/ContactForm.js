@@ -11,8 +11,8 @@ import {
 } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import CustomModal from '../Modals/CustomModal';
-import check from '../../assets/check.png';
-import warn from '../../assets/warn.png';
+import check from '../../assets/check.webp';
+import warn from '../../assets/warn.webp';
 import './ContactForm.css';
 import { Socials } from '../Socials/Socials';
 
