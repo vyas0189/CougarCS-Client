@@ -6135,7 +6135,7 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@3.3.2, hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -10187,12 +10187,12 @@ react-google-invisible-recaptcha@0.2.11:
     prop-types "^15.6.0"
     uuid "^3.1.0"
 
-react-google-recaptcha-v3@1.9.4:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/react-google-recaptcha-v3/-/react-google-recaptcha-v3-1.9.4.tgz#9121d8cda048ae6f6014d198c3f7f39d3295ea90"
-  integrity sha512-WfDzE6WxhM6N2hEGUvPsRPvnxE/fLLEER4g8GAdqExW+MI7MCEjDIpsVkQtNvYo6H2/XRvUjcHStEp9sk0trVg==
+react-google-recaptcha-v3@1.9.5:
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/react-google-recaptcha-v3/-/react-google-recaptcha-v3-1.9.5.tgz#208834732c1e42a6f8503ab186de12398b8bf63f"
+  integrity sha512-WmrhBMCnJovUPdA5S+9SmYlPTPIDXmUJWlHlOnJAXdU0cyZcVkqwln3kIj/NLl8Y6HH/4lKgno5N/e1N+fEtfg==
   dependencies:
-    hoist-non-react-statics "3.3.2"
+    hoist-non-react-statics "^3.3.2"
 
 react-google-recaptcha@2.1.0:
   version "2.1.0"
@@ -10223,10 +10223,10 @@ react-helmet@6.1.0:
     react-fast-compare "^3.1.1"
     react-side-effect "^2.1.0"
 
-react-hook-form@7.10.1:
-  version "7.10.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.10.1.tgz#fd7c78ab72402c2f4a7ac4f6184e84ff0df129b2"
-  integrity sha512-YRSkOZ0DJKjJ+PuCB6caFbFSbz6I4JQcGXVb/OeEIVE3YuXXYYJ/YQwodRy8HsZ5WA+DryoThWIeZZzPd5f9lQ==
+react-hook-form@7.11.0:
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.11.0.tgz#9cae5e21ba1c1a98a40c65cfee07db9e677edc21"
+  integrity sha512-aJVvL5VV6JqUWvwx9fbrhc6La83aQAfXfqQr+TD/sWy3LPdqYBgBIHBt8WAKWzKRm3g29YV2CLfn4wkhNB9b+g==
 
 react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
